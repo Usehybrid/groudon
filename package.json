@@ -1,12 +1,26 @@
 {
-  "name": "groudon",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@hybr1d-tech/groudon",
+  "version": "0.0.1",
+  "description": "Charizard Typography",
+  "main": "dist/typography.min.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "postcss styles/typography.css -o dist/typography.min.css",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "css",
+    "typography",
+    "shared-styles"
+  ],
+  "author": "Soham Sarkar",
+  "license": "ISC",
+  "dependencies": {
+    "cssnano": "^7.0.4",
+    "postcss": "^8.4.40",
+    "postcss-cli": "^11.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Usehybrid/groudon"
+  }
 }
