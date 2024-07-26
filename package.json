@@ -1,6 +1,6 @@
 {
   "name": "@hybr1d-tech/groudon",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Charizard Typography",
   "main": "dist/typography.min.css",
   "scripts": {
