@@ -1,7 +1,7 @@
 :root {
   --base-font-size: 16px; /* Default base font size */
-  --font-feature-settings: 'clig' off, 'liga' off;
-  --font-family: 'Instrument Sans';
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'Instrument Sans';
   --letter-spacing: calc(0.2 / var(--base-font-size) * 1rem);
 
   --line-height-142: calc(20 / var(--base-font-size) * 1rem); /* 142.857% */
@@ -86,6 +86,25 @@
   font-weight: 500;
 }
 .zap-content-semibold {
+  font-weight: 600;
+}
+
+/* Sub Content Styles */
+.zap-subcontent-regular,
+.zap-subcontent-medium,
+.zap-subcontent-semibold {
+  font-size: calc(12 / var(--base-font-size) * 1rem);
+  font-style: normal;
+  line-height: var(--line-height-150);
+  letter-spacing: var(--letter-spacing);
+}
+.zap-subcontent-regular {
+  font-weight: 400;
+}
+.zap-subcontent-medium {
+  font-weight: 500;
+}
+.zap-subcontent-semibold {
   font-weight: 600;
 }
 
