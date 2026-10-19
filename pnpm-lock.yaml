@@ -473,8 +473,8 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
-  postcss-selector-parser@6.1.1:
-    resolution: {integrity: sha512-b4dlw/9V8A71rLIDsSwVmak9z2DuBUB7CA1/wSdelNEzqsjoSPeADTWNO09lpH49Diy3/JIZ2bSPB1dI3LJCHg==}
+  postcss-selector-parser@6.1.4:
+    resolution: {integrity: sha512-bIoJLOmjCO1S9XdY/DcnR5hJxvrDir1PbGChrzXG3vw0/FOliy/fA3dmdhQ441kah4gKv+TwckGzex6wNS5cnQ==}
     engines: {node: '>=4'}
 
   postcss-svgo@7.0.1:
@@ -880,7 +880,7 @@ snapshots:
   postcss-calc@10.0.0(postcss@8.4.40):
     dependencies:
       postcss: 8.4.40
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.4
       postcss-value-parser: 4.2.0
 
   postcss-cli@11.0.0(postcss@8.4.40):
@@ -919,7 +919,7 @@ snapshots:
   postcss-discard-comments@7.0.1(postcss@8.4.40):
     dependencies:
       postcss: 8.4.40
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.4
 
   postcss-discard-duplicates@7.0.0(postcss@8.4.40):
     dependencies:
@@ -952,7 +952,7 @@ snapshots:
       caniuse-api: 3.0.0
       cssnano-utils: 5.0.0(postcss@8.4.40)
       postcss: 8.4.40
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.4
 
   postcss-minify-font-values@7.0.0(postcss@8.4.40):
     dependencies:
@@ -977,7 +977,7 @@ snapshots:
     dependencies:
       cssesc: 3.0.0
       postcss: 8.4.40
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.4
 
   postcss-normalize-charset@7.0.0(postcss@8.4.40):
     dependencies:
@@ -1047,7 +1047,7 @@ snapshots:
       postcss: 8.4.40
       thenby: 1.3.4
 
-  postcss-selector-parser@6.1.1:
+  postcss-selector-parser@6.1.4:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -1061,7 +1061,7 @@ snapshots:
   postcss-unique-selectors@7.0.1(postcss@8.4.40):
     dependencies:
       postcss: 8.4.40
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.4
 
   postcss-value-parser@4.2.0: {}
 
@@ -1109,7 +1109,7 @@ snapshots:
     dependencies:
       browserslist: 4.23.2
       postcss: 8.4.40
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.4
 
   svgo@3.3.2:
     dependencies:
