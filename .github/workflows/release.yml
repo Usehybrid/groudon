@@ -15,17 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup repo + install pnpm
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+        # version comes from the packageManager field in package.json
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
+          # cssnano 9 needs ^24.15.0 on the 24 line; pnpm 12 needs >=22
+          node-version: 24
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
 
@@ -36,21 +36,23 @@ jobs:
         run: pnpm run build
 
       - name: Publish Package
+        # publish only on v* tag pushes; PR runs are build-only
+        if: startsWith(github.ref, 'refs/tags/v')
         run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Slack - Build Success
-        if: success()
-        uses: act10ns/slack@v2.0.0
+        if: success() && startsWith(github.ref, 'refs/tags/v')
+        uses: act10ns/slack@v2.2.0
         with:
           status: ${{ job.status }}
           channel: '#alerts-deploys'
           message: 'Groudon was successfully published to npm'
 
       - name: Slack - Build Failed
-        if: failure()
-        uses: act10ns/slack@v2.0.0
+        if: failure() && startsWith(github.ref, 'refs/tags/v')
+        uses: act10ns/slack@v2.2.0
         with:
           status: ${{ job.status }}
           channel: '#alerts-deploys'
