@@ -15,7 +15,7 @@
   "author": "Soham Sarkar",
   "license": "ISC",
   "packageManager": "pnpm@12.15.0",
-  "dependencies": {
+  "devDependencies": {
     "cssnano": "^9.9.0",
     "postcss": "^8.5.31",
     "postcss-cli": "^12.0.0"
