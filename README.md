@@ -62,7 +62,8 @@ html {
 }
 ```
 
-Every token then renders at its design size (`zap-hero-*` is 20px in both apps) and still scales
+Set it on `:root`, not `html`: groudon's default lives on `:root`, which outranks an `html`
+selector, and the override must load after groudon. Every token then renders at its design size (`zap-hero-*` is 20px in both apps) and still scales
 with the root. Groudon never sets the root font size itself, so an app on the browser default keeps
 honouring the user's font-size preference.
 
