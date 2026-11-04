@@ -1,0 +1,138 @@
+/*
+ * zap-* typography utilities. Each class only reads tokens from tokens.css, so a scale change
+ * is made once there. The classes stay unlayered on purpose: they have always competed with
+ * component CSS on source order at equal specificity, and moving them into a cascade layer
+ * would silently make every unlayered rule win over them.
+ */
+
+/* Hero: 20/28 */
+.zap-hero-medium,
+.zap-hero-semibold,
+.zap-hero-bold {
+  font-size: var(--zap-text-hero-size);
+  line-height: var(--zap-text-hero-line-height);
+  font-style: normal;
+  letter-spacing: var(--zap-letter-spacing);
+}
+
+/* Lead: 18/24 */
+.zap-lead-medium,
+.zap-lead-semibold,
+.zap-lead-bold {
+  font-size: var(--zap-text-lead-size);
+  line-height: var(--zap-text-lead-line-height);
+  font-style: normal;
+  letter-spacing: var(--zap-letter-spacing);
+}
+
+/* Heading: 16/20 */
+.zap-heading-medium,
+.zap-heading-semibold,
+.zap-heading-bold {
+  font-size: var(--zap-text-heading-size);
+  line-height: var(--zap-text-heading-line-height);
+  font-style: normal;
+  letter-spacing: var(--zap-letter-spacing);
+}
+
+/* Content: 14/20 */
+.zap-content-regular,
+.zap-content-medium,
+.zap-content-semibold {
+  font-size: var(--zap-text-content-size);
+  line-height: var(--zap-text-content-line-height);
+  font-style: normal;
+  letter-spacing: var(--zap-letter-spacing);
+}
+
+/* Subcontent: 12/18 */
+.zap-subcontent-regular,
+.zap-subcontent-medium,
+.zap-subcontent-semibold {
+  font-size: var(--zap-text-subcontent-size);
+  line-height: var(--zap-text-subcontent-line-height);
+  font-style: normal;
+  letter-spacing: var(--zap-letter-spacing);
+}
+
+/* Caption: 11/16, no letter spacing */
+.zap-caption-regular,
+.zap-caption-medium,
+.zap-caption-semibold {
+  font-size: var(--zap-text-caption-size);
+  line-height: var(--zap-text-caption-line-height);
+  font-style: normal;
+}
+
+/* Weights */
+.zap-content-regular,
+.zap-subcontent-regular,
+.zap-caption-regular {
+  font-weight: var(--zap-weight-regular);
+}
+.zap-hero-medium,
+.zap-lead-medium,
+.zap-heading-medium,
+.zap-content-medium,
+.zap-subcontent-medium,
+.zap-caption-medium {
+  font-weight: var(--zap-weight-medium);
+}
+.zap-hero-semibold,
+.zap-lead-semibold,
+.zap-heading-semibold,
+.zap-content-semibold,
+.zap-subcontent-semibold,
+.zap-caption-semibold {
+  font-weight: var(--zap-weight-semibold);
+}
+.zap-hero-bold,
+.zap-lead-bold,
+.zap-heading-bold {
+  font-weight: var(--zap-weight-bold);
+}
+
+/* Buttons */
+.zap-button,
+.zap-button-small {
+  font-style: normal;
+  font-weight: var(--zap-weight-semibold);
+  letter-spacing: var(--zap-letter-spacing);
+}
+.zap-button {
+  font-size: var(--zap-text-button-size);
+  line-height: var(--zap-text-button-line-height);
+}
+.zap-button-small {
+  font-size: var(--zap-text-button-small-size);
+  line-height: var(--zap-text-button-small-line-height);
+}
+
+/* Links: external links are underlined and semibold, internal links are medium */
+.zap-link,
+.zap-link-small,
+.zap-internallink,
+.zap-internallink-small {
+  color: var(--zap-link-color);
+  font-style: normal;
+  letter-spacing: var(--zap-letter-spacing);
+}
+.zap-link,
+.zap-link-small {
+  font-weight: var(--zap-weight-semibold);
+  text-decoration-line: underline;
+}
+.zap-internallink,
+.zap-internallink-small {
+  font-weight: var(--zap-weight-medium);
+}
+.zap-link,
+.zap-internallink {
+  font-size: var(--zap-text-content-size);
+  line-height: var(--zap-text-content-line-height);
+}
+.zap-link-small,
+.zap-internallink-small {
+  font-size: var(--zap-text-subcontent-size);
+  line-height: var(--zap-text-subcontent-line-height);
+}

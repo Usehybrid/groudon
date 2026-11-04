@@ -1,0 +1,48 @@
+/*
+ * Groudon design tokens — the single source of the ZenAdmin type scale.
+ *
+ * Every size is authored in design pixels (the numbers in Figma) and rendered in rem through
+ * --zap-px, so text still follows the root font size.
+ *
+ * --zap-base-font-size is the one knob an app may need: set it to the px value of the app's
+ * <html> font-size (unitless). It defaults to 16, the browser default. An app with a 13px root
+ * sets `:root { --zap-base-font-size: 13; }` next to its `html { font-size: 13px; }` and every
+ * token still renders at its design size. Groudon never sets the root font size itself.
+ */
+:root {
+  --zap-base-font-size: 16;
+  /* one design pixel, in rem */
+  --zap-px: calc(1rem / var(--zap-base-font-size));
+
+  --zap-font-sans: 'Instrument Sans', Helvetica, sans-serif;
+  --zap-letter-spacing: calc(0.2 * var(--zap-px));
+  --zap-link-color: var(--link-l-50, #0f72ee);
+
+  --zap-weight-regular: 400;
+  --zap-weight-medium: 500;
+  --zap-weight-semibold: 600;
+  --zap-weight-bold: 700;
+
+  /* size / line-height pairs, in design pixels */
+  --zap-text-hero-size: calc(20 * var(--zap-px));
+  --zap-text-hero-line-height: calc(28 * var(--zap-px));
+  --zap-text-lead-size: calc(18 * var(--zap-px));
+  --zap-text-lead-line-height: calc(24 * var(--zap-px));
+  --zap-text-heading-size: calc(16 * var(--zap-px));
+  --zap-text-heading-line-height: calc(20 * var(--zap-px));
+  --zap-text-content-size: calc(14 * var(--zap-px));
+  --zap-text-content-line-height: calc(20 * var(--zap-px));
+  --zap-text-subcontent-size: calc(12 * var(--zap-px));
+  --zap-text-subcontent-line-height: calc(18 * var(--zap-px));
+  --zap-text-caption-size: calc(11 * var(--zap-px));
+  --zap-text-caption-line-height: calc(16 * var(--zap-px));
+  --zap-text-button-size: calc(14 * var(--zap-px));
+  --zap-text-button-line-height: calc(24 * var(--zap-px));
+  --zap-text-button-small-size: calc(12 * var(--zap-px));
+  --zap-text-button-small-line-height: calc(20 * var(--zap-px));
+
+  font-family: var(--zap-font-sans);
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
+}
