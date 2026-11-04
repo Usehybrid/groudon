@@ -1,24 +1,44 @@
 {
   "name": "@hybr1d-tech/groudon",
-  "version": "0.1.2",
-  "description": "Charizard Typography",
-  "main": "dist/typography.min.css",
+  "version": "1.0.0",
+  "description": "ZenAdmin typography: type-scale tokens and zap-* utility classes",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/groudon.css",
+  "style": "./dist/groudon.css",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./dist/groudon.css",
+    "./groudon.css": "./dist/groudon.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./utilities.css": "./dist/utilities.css",
+    "./classes": {
+      "types": "./dist/classes.d.ts",
+      "default": "./dist/classes.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "build": "postcss styles/typography.css -o dist/typography.min.css",
-    "prepublishOnly": "npm run build"
+    "build": "node scripts/build.mjs",
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "css",
     "typography",
-    "shared-styles"
+    "design-tokens"
   ],
   "author": "Soham Sarkar",
   "license": "ISC",
   "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=24"
+  },
   "devDependencies": {
-    "cssnano": "^9.9.0",
-    "postcss": "^8.5.31",
-    "postcss-cli": "^12.0.0"
+    "lightningcss": "^1.33.0"
   },
   "repository": {
     "type": "git",
