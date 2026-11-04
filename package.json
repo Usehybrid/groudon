@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "node scripts/build.mjs"
   },
   "keywords": [
     "css",
