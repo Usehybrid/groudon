@@ -13,6 +13,10 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # npm trusted publishing (OIDC), same as charizard — no long-lived NPM_TOKEN
+      id-token: write
     steps:
       - name: Setup repo + install pnpm
         uses: actions/checkout@v7
@@ -38,9 +42,8 @@ jobs:
       - name: Publish Package
         # publish only on v* tag pushes; PR runs are build-only
         if: startsWith(github.ref, 'refs/tags/v')
-        run: pnpm publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # npm (>=11.5, bundled with node 24) exchanges the OIDC token itself and attaches provenance
+        run: npm publish --provenance --access public
 
       - name: Slack - Build Success
         if: success() && startsWith(github.ref, 'refs/tags/v')
